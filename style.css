@@ -1,0 +1,58 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Gehra, andhera background */
+    color: #a9a9a9; /* Halka grey text, jaise yaadein */
+    font-family: 'Courier New', Courier, monospace; /* Purani typewriter jaisi font */
+    overflow: hidden; /* Scrollbar hatane ke liye */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    opacity: 0; /* Shuru mein text chupa rahega */
+    transition: opacity 1.5s ease-in-out; /* Dheere se aane ka effect */
+    min-height: 2.5rem; /* Taaki layout na bigde */
+}
+
+#line3 {
+    color: #b22222; /* Dard ko dikhane ke liye halka laal rang */
+    font-weight: bold;
+}
+
+#final-word {
+    font-size: 2rem;
+    margin-top: 50px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+/* Text type karne wale cursor ka effect */
+.cursor::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent }
+    50% { color: #a9a9a9; }
+}
+
+@media (max-width: 600px) {
+    p {
+        font-size: 1.2rem;
+    }
+}
